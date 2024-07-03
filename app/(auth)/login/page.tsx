@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
 import Logo from "@/public/logo.png"
-
 export default function page() {
   return (
-    <div className='flex w-[200px] justify-center md:w-[800px]'>
+    <div className='relative flex w-[200px] justify-center md:w-[800px]'>
       <form action="#" className='flex flex-col items-center gap-8'>
           <Image src={Logo} width={`200`} height={`200`} alt='Logo' />
           <input type='email' placeholder='Enter your email' className='ring-2 ring-purple-300 outline-purple-600 shadow-md rounded-md placeholder:text-center p-3 md:w-[500px] md:text-xl bg-white/10 hover:bg-white/40' />
