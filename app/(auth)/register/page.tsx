@@ -3,7 +3,8 @@
 import React, { useActionState } from 'react'
 import Link from "next/link"
 import {motion} from "framer-motion"
-import {register}  from '@/action/action'
+
+import { register }  from '@/action/action'
 
 export default function page() {
   
