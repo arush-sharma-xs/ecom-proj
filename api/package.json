@@ -12,7 +12,8 @@
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint",
-    "start": "npx ts-node src/index.ts"
+    "dev": "npx ts-node src/index.ts",
+    "start": "node build/src/index.js"
   },
   "keywords": [],
   "author": "",
