@@ -9,5 +9,5 @@ export const register = (prevState:any, queryData:any) => {
   
   console.log(queryData)
 
-  return {error : ""}
+  return {error : ""} 
 }

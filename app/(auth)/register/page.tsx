@@ -7,6 +7,10 @@ import {motion} from "framer-motion"
 import { register }  from '@/action/action'
 
 export default function page() {
+
+
+
+  
   
   return (
    <motion.div initial={{ x:-500, y:0 }} animate={{x:0, y:0}} className='relative z-999999 flex'>
