@@ -8,10 +8,6 @@ import { register }  from '@/action/action'
 
 export default function page() {
 
-
-
-  
-  
   return (
    <motion.div initial={{ x:-500, y:0 }} animate={{x:0, y:0}} className='relative z-999999 flex'>
         <form  action={"#"} className='bg-white/90 h-[350px] p-8 rounded-lg shadow-xl flex items-center justify-start flex-col gap-4 '>
