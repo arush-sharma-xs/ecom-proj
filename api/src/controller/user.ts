@@ -6,6 +6,8 @@ import jwt from "jsonwebtoken"
 const prisma = new PrismaClient()
 
 export const createUserAcount = async  (req:Request,res:Response) => {
+    console.log("request Body", req.body);
+
     const userData : UserRegister = req.body;
 
     const user = await prisma.user.findFirst({ where :{
@@ -14,7 +16,14 @@ export const createUserAcount = async  (req:Request,res:Response) => {
 
     if(!user) {
             const user = await prisma.user.create({data :userData})
-            return res.status(200).send("User Created");
+            const token = jwt.sign({
+                id : user.id
+            }, "secret-key")
+
+           return res.cookie("access_token", token, {
+            maxAge : 7*24*60*60,
+            httpOnly : true
+           }).status(200).send("User Created");
     } else {
             return res.status(401).send("Account already exist.")
     }

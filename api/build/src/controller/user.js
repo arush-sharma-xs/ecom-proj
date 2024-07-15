@@ -8,13 +8,20 @@ const client_1 = require("@prisma/client");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const prisma = new client_1.PrismaClient();
 const createUserAcount = async (req, res) => {
+    console.log("request Body", req.body);
     const userData = req.body;
     const user = await prisma.user.findFirst({ where: {
             email: userData.email
         } });
     if (!user) {
         const user = await prisma.user.create({ data: userData });
-        return res.status(200).send("User Created");
+        const token = jsonwebtoken_1.default.sign({
+            id: user.id
+        }, "secret-key");
+        return res.cookie("access_token", token, {
+            maxAge: 7 * 24 * 60 * 60,
+            httpOnly: true
+        }).status(200).send("User Created");
     }
     else {
         return res.status(401).send("Account already exist.");
