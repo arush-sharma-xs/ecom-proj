@@ -6,9 +6,9 @@ import {motion} from "framer-motion"
 import axios from "@/app/axios.config"
 import {permanentRedirect} from "next/navigation"
 
-export default function page() {
+export default function Page() {
   const [error, setError] = useState("");
-  const ref = useRef();
+  const ref = useRef<any>();
 
   const handleSubmit = async (e:React.FormEvent) => {
     e.preventDefault();

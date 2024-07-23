@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { beagle } from '@/public/beagle.jpg';
 
 const config: Config = {
   content: [

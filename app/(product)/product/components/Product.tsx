@@ -3,7 +3,6 @@ import {cartState, cartTotal} from "@/app/recoilstate"
 function Product(props:any) {
 
   const setCartState = useSetRecoilState<any>(cartState)
-  const setCartTotal = useSetRecoilState(cartTotal);
 
   const addToCart = (item:any) => {
     setCartState((oldCart:any) => [...oldCart, {item, qty : 1}])  

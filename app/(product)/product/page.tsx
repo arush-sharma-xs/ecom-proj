@@ -5,7 +5,7 @@ import Products from "./components/Products";
 import CartItems from "./components/CartItems";
 
 
-export default function page() {
+export default function Page() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
